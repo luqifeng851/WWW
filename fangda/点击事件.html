@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+            height: 50px;
+            background-color: #58bc58;
+        }
+        .ha{
+            display:none;
+        }
+        .he{
+            display: block;
+            background: #63c;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="ha">
+        <li>哈哈哈哈哈</li>
+        <li>点击事件</li>
+        <li>今天留点起床</li>
+        <li>明天要上课啦，好不社会的</li>
+    </ul>
+    <ul class="ha">
+        <li>哈哈哈哈哈</li>
+        <li>点击事件</li>
+        <li>今天留点起床</li>
+        <li>明天要上课啦，好不社会的</li>
+        <li>哈哈哈哈哈</li>
+        <li>点击事件</li>
+        <li>今天留点起床</li>
+    </ul>
+    <ul class="ha">
+        <li>哈哈哈哈哈</li>
+        <li>点击事件</li>
+        <li>明天要上课啦，好不社会的</li>
+        <li>哈哈哈哈哈</li>
+        <li>今天留点起床</li>
+        <li>明天要上课啦，好不社会的</li>
+    </ul>
+    <ul class="ha">
+        <li>哈哈哈哈哈</li>
+        <li>点击事件</li>
+        <li>今天留点起床</li>
+        <li>明天要上课啦，好不社会的</li>
+        <li>哈哈哈哈哈</li>
+        <li>明天要上课啦，好不社会的</li>
+    </ul>
+    <script>
+        var h1=document.querySelectorAll("h1");
+        h1.onclick=function(){
+            document.getElementsByTagName("ul").className="he";
+        }
+    </script>
+</body>
+</html>
