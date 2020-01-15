@@ -203,5 +203,6 @@ window.onload = function () {
             })
         }
     });
-
+    $(".right_nav").load("./首页.html .right_nav a");
+    $("footer").load("./首页.html #foot")
 }

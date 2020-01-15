@@ -82,8 +82,8 @@ body {
     height: 200px;
     border: 1px solid #ccc;
     position: absolute;
-    top: 30px;
-    left: 787px;
+    top: 131px;
+    left: 785px;
     display: none;
 }
 
@@ -202,6 +202,7 @@ body {
     height: 40px;
     text-align: center;
     line-height: 40px;
+    position: relative;
 }
 
 .nav-goods .nav-index li {
@@ -230,7 +231,7 @@ body {
     border: 1px solid orange;
     display: none;
     background-color: #fff;
-    display: block;
+    /* display: block; */
 }
 
 .nav-goods .nav-index .z-index li {
@@ -364,4 +365,22 @@ body {
     text-align: center;
     line-height: 52px;
 
+}
+
+.right_nav {
+    width: 30px;
+    height: 100%;
+    background-color: #333333;
+    position: fixed;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+
+.right_nav div {
+    color: orange;
+    /* line-height: 50px; */
+    height: 50px;
+    /* font-size: 14px; */
+    margin-top: 220px;
 }

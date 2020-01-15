@@ -200,3 +200,20 @@ function f5() {
     console.log(JSON.stringify(data));
 
 }
+//详情页，列表左边上的数据
+function f6() {
+    var oDiv = document.querySelector(".mc .clearfix");
+    var lis = oDiv.children;
+    var arr = [];
+    for (var i = 0; i < lis.length; i++) {
+        var o = {};
+        o.src = lis[i].querySelector("img").src;
+        o.title = lis[i].querySelector(".topSaleMessage a").innerText;
+        o.price = lis[i].querySelector(".topSalePrice").innerText;
+        arr.push(o)
+    }
+
+    console.log(JSON.stringify(arr));
+
+
+}

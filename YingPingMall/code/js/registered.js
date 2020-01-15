@@ -109,5 +109,5 @@
      $("#login").click(() => {
          window.location.href = "./login.html";
      })
-
+     $(".nl-footer").load("./login.html .nl-footer .item ");
  })
