@@ -1,4 +1,4 @@
-//顶部的效果(我的音平)
+// 顶部的效果(我的音平)
 $(".topNav .right ul li").eq(0).mouseenter(function () {
     $(this).css("border", "1px solid #ccc")
     $(".topNav .nav-details").stop().slideToggle();
@@ -54,5 +54,14 @@ $.getJSON("../server/navData.json", function (res) {
     }).join("");
     jsonp.html(html);
     $(".allbtn").append(jsonp);
-
+    console.log("++++");
+    $(".jspop>li").mouseenter(function () {
+        $(".pop").removeClass("pop1")
+        $(this).addClass("item").siblings().removeClass("item");
+        $(this).find(".pop").addClass("pop1");
+    })
+    $(".jspop").mouseleave(function () {
+        $(".pop").removeClass("pop1");
+        $(".jspop>li").removeClass("item");
+    })
 })

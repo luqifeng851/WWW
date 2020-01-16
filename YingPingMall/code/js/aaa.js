@@ -1,16 +1,9 @@
-$(".jspop").addClass("box");
-console.log($(".jspop>li"));
-
-$(".jspop>li").mouseenter(function () {
-    console.log("++++");
-
-    $(".pop").removeClass("pop1")
-    $(this).addClass("item").siblings().removeClass("item");
-    $(this).find(".pop").addClass("pop1");
+//鼠标划入，导航栏出现
+$(".allbtn").mouseenter(() => {
+    $(".jspop").addClass("box");
 })
+//鼠标划出，导航栏消失
 $(".jspop").mouseleave(function () {
-    console.log("mouseleave");
-
-    $(".pop").removeClass("pop1");
-    $(".jspop>li").removeClass("item");
+    $(this).css("display", "none");
 })
+console.log("----");

@@ -3,7 +3,24 @@
          $("header").load("./首页.html #top");
          resolve();
      }).then(function () {
-         $.getScript("../js/aaa.js");
+         return new Promise(function (resolve, reject) {
+             setTimeout(function () {
+                 $.getScript("../js/首页头部效果.js");
+                 resolve();
+             }, 200)
+         })
+     }).then(function () {
+         return new Promise(function (resolve, reject) {
+             setTimeout(function () {
+                 $(".jspop").removeClass("box");
+                 resolve();
+             }, 200)
+         })
+     }).then(function () {
+         setTimeout(function () {
+
+             $.getScript("../js/aaa.js");
+         }, 200)
      })
 
      //一周销量排行
@@ -119,11 +136,15 @@
                      }
                  })
                  //去详情页
-                 $(".main-dowm>li").click(function () {
-                     let index = $(this).data("index");
-                     window.location.href =
-                         `http://127.0.0.1/YingPingMall/code/html/%e8%af%a6%e6%83%85%e9%a1%b5.html?id=${index}`;
+                 $(".main-dowm li").click(function () {
+                     let index = $(this).data("index") * 1 - 1;
+                     window.location.href = `http://127.0.0.1/YingPingMall/code/html/%e8%af%a6%e6%83%85%e9%a1%b5.html?id=${index}`;
                  })
+                 //加入购物车
+                 //  $(".main-dowm li .joinBuyCar").click(function () {
+                 //      console.log($(this));
+
+                 //  })
              }
          });
      }
@@ -152,6 +173,8 @@
          $(this).addClass("item").siblings().removeClass("item");
          render(page, sort);
      })
+     //右边加入购物车
      $(".right_nav").load("./首页.html .right_nav a");
+     //尾部标签
      $("footer").load("./首页.html #foot")
  }

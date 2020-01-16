@@ -7,15 +7,23 @@ window.onload = function () {
         $("header").load("./首页.html #top");
         resolve();
     }).then(function () {
-        // return new Promise(function (resolve, reject) {
-        //     $.getScript("../js/首页头部效果.js");
-
-        //     resolve();
-        // })
-        $.getScript("../js/aaa.js");
-        // }).then(function () {
-        //     $.getScript("../js/aaa.js");
-        // })
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                $.getScript("../js/首页头部效果.js");
+                resolve();
+            }, 200)
+        })
+    }).then(function (resolve, reject) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                $.getScript("../js/aaa.js");
+                resolve();
+            }, 200)
+        })
+    }).then(function (resolve, reject) {
+        setTimeout(function () {
+            $(".jspop").removeClass("box");
+        }, 200)
     })
     $.ajax({
         type: "get",
@@ -58,7 +66,7 @@ window.onload = function () {
                             <div class="btn-add-buy">
                                 <button>&lt</button><input type="text" value="1"><button>&gt</button>
                                 <span class="buy">立即购买</span>
-                                <span class="buyCar">加入购物车</span>
+                                <span class="buyCar" data-index=${data.goodid}>加入购物车</span>
                             </div>
                         </div>`;
             $(".main").prepend(html);
@@ -200,6 +208,22 @@ window.onload = function () {
                 }
                 $(".mb").mouseenter(() => clearInterval(timer));
                 $(".mb").mouseleave(() => time());
+            })
+            //添加到购物车
+            $(".buyCar").click(function () {
+                $.ajax({
+                    type: "get",
+                    url: "../../server/addbuycar.php",
+                    data: {
+                        "id": index,
+                        "type": "add",
+                    },
+                    // dataType: "dataType",
+                    success: function (response) {
+                        console.log(response);
+
+                    }
+                });
             })
         }
     });
